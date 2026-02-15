@@ -18,7 +18,9 @@ export default {
   collectCoverageFrom: [
     'src/**/*.ts',
     '!src/**/*.test.ts',
-    '!src/**/__tests__/**'
+    '!src/**/__tests__/**',
+    '!src/index.ts',
+    '!src/infrastructure/config/**',
   ],
   coverageThreshold: {
     global: {

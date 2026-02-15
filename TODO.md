@@ -34,10 +34,10 @@
 
 ### 1.5 Capa de Infraestructura - API REST
 
-- [ ] Express server con endpoints REST
-- [ ] Controllers que llaman a use cases
-- [ ] Middleware de validación y error handling
-- [ ] E2E tests de endpoints (con supertest + MongoDB en memoria)
+- [x] Express server con endpoints REST
+- [x] Controllers que llaman a use cases
+- [x] Middleware de validación y error handling
+- [x] E2E tests de endpoints (con supertest + MongoDB en memoria)
 
 **Entregable Fase 1:** API funcional con >80% test coverage, sin Docker
 
