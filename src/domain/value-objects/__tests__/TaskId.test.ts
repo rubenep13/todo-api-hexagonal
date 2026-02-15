@@ -1,4 +1,4 @@
-import { TaskId } from '../TaskId';
+import { TaskId } from '../TaskId.js';
 
 describe('TaskId', () => {
   describe('create', () => {
