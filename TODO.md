@@ -39,33 +39,29 @@
 - [x] Middleware de validación y error handling
 - [x] E2E tests de endpoints (con supertest + MongoDB en memoria)
 
-**Entregable Fase 1:** API funcional con >80% test coverage, sin Docker
-
 ---
 
 ## FASE 2: CONTAINERIZACIÓN (Semana 2)
 
 ### 2.1 Docker básico
 
-- [ ] Dockerfile para la aplicación
-- [ ] .dockerignore optimizado
-- [ ] Verificar build y ejecución local del contenedor
+- [x] Dockerfile para la aplicación
+- [x] .dockerignore optimizado
+- [x] Verificar build y ejecución local del contenedor
 
 ### 2.2 Docker Compose
 
-- [ ] docker-compose.yml con servicios: api + mongo
-- [ ] Variables de entorno para configuración
-- [ ] Volúmenes para persistencia de datos MongoDB
-- [ ] Network entre contenedores
-- [ ] Verificar que toda la suite de tests corre en contenedor
+- [x] docker-compose.yml con servicios: api + mongo
+- [x] Variables de entorno para configuración
+- [x] Volúmenes para persistencia de datos MongoDB
+- [x] Network entre contenedores
+- [x] Verificar que toda la suite de tests corre en contenedor
 
 ### 2.3 Entornos múltiples
 
-- [ ] docker-compose.dev.yml (con volúmenes para hot reload)
-- [ ] docker-compose.test.yml (para correr tests en CI)
-- [ ] Configuración de entornos via .env files
-
-**Entregable Fase 2:** Proyecto completamente dockerizado, levantable con un comando
+- [x] docker-compose.dev.yml (con volúmenes para hot reload [no funciona en windows])
+- [x] docker-compose.test.yml (para correr tests en CI)
+- [x] Configuración de entornos via .env files
 
 ---
 
@@ -90,8 +86,6 @@
 - [ ] Test coverage reports
 - [ ] Notificaciones de fallos (opcional)
 - [ ] Deploy manual a producción con aprobación (opcional)
-
-**Entregable Fase 3:** Pipeline completo que va de commit â†’ tests â†’ deploy automático
 
 ---
 
@@ -119,8 +113,6 @@
 - [ ] Métricas: coverage, performance, lí­neas de código
 - [ ] Repo público en GitHub bien presentado
 
-**Entregable Final:** Proyecto portfolio-ready que demuestra dominio de testing, arquitectura, Docker y CI/CD
-
 ---
 
 ## Criterios de éxito
@@ -132,40 +124,3 @@
 - Documentación clara para otros devs
 
 ---
-
-## Notas de contexto
-
-### Stack tecnológico
-
-- **Runtime:** Node.js 20+
-- **Lenguaje:** TypeScript
-- **Framework:** Express
-- **Base de datos:** MongoDB + Mongoose
-- **Testing:** Jest
-- **Containerización:** Docker + Docker Compose
-- **CI/CD:** GitHub Actions
-- **Deployment:** Railway o Render
-
-### Arquitectura Hexagonal
-
-```
-src/
-â”œâ”€â”€ domain/              # Capa de dominio (lógica de negocio pura)
-â”‚   â”œâ”€â”€ entities/
-â”‚   â”œâ”€â”€ value-objects/
-â”‚   â””â”€â”€ repositories/    # Interfaces (puertos)
-â”œâ”€â”€ application/         # Casos de uso
-â”‚   â””â”€â”€ use-cases/
-â””â”€â”€ infrastructure/      # Adaptadores
-    â”œâ”€â”€ persistence/     # Implementación de repositorios
-    â”œâ”€â”€ http/           # Controllers y rutas
-    â””â”€â”€ config/         # Configuración
-```
-
-### Beneficios del proyecto para tu carrera
-
-- Demuestra conocimiento de testing end-to-end
-- Muestra comprensión de arquitectura limpia
-- Evidencia experiencia con Docker y CI/CD
-- Portfolio tangible para entrevistas técnicas
-- Cubre gaps crí­ticos que te frenan en posiciones senior reales

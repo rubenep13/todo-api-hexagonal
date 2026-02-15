@@ -1,0 +1,15 @@
+FROM node:20
+
+WORKDIR /app
+
+# Copiar package files
+COPY package*.json ./
+
+# Instalar TODAS las dependencias (incluidas devDependencies)
+RUN npm ci
+
+# Copiar todo el código fuente (incluidos tests)
+COPY . .
+
+# Comando por defecto: correr tests
+CMD ["npm", "test"]

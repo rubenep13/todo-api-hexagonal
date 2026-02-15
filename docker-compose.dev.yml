@@ -1,0 +1,35 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: todo-api-mongo-dev
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data-dev:/data/db
+    networks:
+      - dev-network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: todo-api-dev
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.development
+    depends_on:
+      - mongo
+    networks:
+      - dev-network
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+      - /app/node_modules
+
+volumes:
+  mongo-data-dev:
+
+networks:
+  dev-network:
+    driver: bridge

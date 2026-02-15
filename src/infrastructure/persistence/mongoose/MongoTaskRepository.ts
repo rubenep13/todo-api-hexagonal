@@ -8,8 +8,11 @@ export class MongoTaskRepository implements TaskRepository {
   async save(task: Task): Promise<void> {
     const doc = TaskMapper.toPersistence(task);
 
-    await TaskModel.findOneAndUpdate({ id: doc.id }, doc, { upsert: true, new: true });
-    // Note: Upsert will create a new document if it doesn't exist, or update the existing one. The 'new: true' option returns the updated document.
+    await TaskModel.findOneAndUpdate({ id: doc.id }, doc, {
+      upsert: true,
+      returnDocument: 'after',
+    });
+    // Note: Upsert will create a new document if it doesn't exist, or update the existing one. The 'returnDocument: "after"' option returns the updated document.
   }
 
   async findById(id: TaskId): Promise<Task | null> {

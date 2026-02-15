@@ -12,6 +12,7 @@ export class Server {
 
   private setupMiddleware(): void {
     this.app.use(express.json());
+    console.log('🔥 Middleware configurado - HOT RELOAD funcionando');
   }
 
   private setupRoutes(): void {

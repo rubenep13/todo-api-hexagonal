@@ -1,0 +1,15 @@
+services:
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    container_name: todo-api-test
+    environment:
+      - NODE_ENV=test
+    command: npm test
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge
